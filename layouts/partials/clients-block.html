@@ -1,0 +1,26 @@
+<!-- Clients Logo Section Start -->
+<section id="clients-logo-section">
+  <div class="container">
+    <!-- Intro -->
+    <div class="row">
+      <div class="section-title" style="text-align: center">
+        <h2>{{ .Site.Data.clients.title }}</h2>
+        <p>{{ .Site.Data.clients.subtitle }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <div id="clients-logo" class="owl-carousel">
+            {{ range .Site.Data.clients.clients }}
+            <div class="clients-logo-img">
+              <a href="{{ .url }}"><img style="height:50px" src="{{ $.Site.BaseURL }}{{ .image }}" alt="Features"></a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -6,27 +6,31 @@
 
 </head>
 <body>
+	{{ if .Site.Params.topmenu.enable }}
+		{{ partial "header.html" . }}
+	{{ end }}
 
-	{{ partial "header.html" . }}
-
-	{{ if and (isset .Site.Params "slider") (.Site.Params.slider.enable) }}
+	{{ if .Site.Params.slider.enable }}
 		{{ partial "slider.html" . }}
 	{{ end }}
 
-	{{ if and (isset .Site.Params "wrapper") (.Site.Params.wrapper.enable) }}
+	{{ if .Site.Params.wrapper.enable }}
 		{{ partial "wrapper.html" . }}
 	{{ end }}
 
-	{{ if and (isset .Site.Params "feature") (.Site.Params.feature.enable) }}
+	{{ if .Site.Params.feature.enable }}
 		{{ partial "feature.html" . }}
 	{{ end }}
 
-
-	{{ if and (isset .Site.Data "service") (.Site.Data.service.enable) }}
+	{{ if .Site.Data.service.enable }}
 		{{ partial "service.html" . }}
 	{{ end }}
 
-	{{ if and (isset .Site.Params "call") (.Site.Params.call.enable) }}
+	{{ if .Site.Data.clients.enable }}
+		{{ partial "clients-block.html" . }}
+	{{ end }}
+
+	{{ if .Site.Params.call.enable }}
 		{{ partial "call-to-action.html" .Site.Params.call }}
 	{{ end }}
 
